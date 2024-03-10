@@ -1,10 +1,6 @@
 let savedWords = document.getElementById('savedwords');
 
 function addWord() {
-    let button = document.createElement('button');
-    button.textContent= 'Delete word';
-    button.style.background = "rgba(255, 0, 0, 0.8)";
-    savedWords.appendChild(button);
     let wordIntroduced = document.getElementById('writeWords').value;
     savedWords.innerHTML += ' ' + wordIntroduced + '<br>';
     document.getElementById('writeWords').innerHTML = '';
