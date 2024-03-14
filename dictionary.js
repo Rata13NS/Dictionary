@@ -8,7 +8,7 @@ function addWord() {
 
 function searchWord() {
     let wordSearched = document.getElementById('writeWords').value;
-    if (savedWords.textContent.includes(wordSearched + ' ')) {
+    if (savedWords.textContent.includes(' ' + wordSearched + ' ')) {
         alert('The word is included in dictionary');
     } else {
         alert('The word is not included in dictionary');
