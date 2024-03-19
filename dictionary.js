@@ -1,17 +1,24 @@
 let savedWords = document.getElementById('savedwords');
+let savedWordsString = [];
 
 function addWord() {
     let wordIntroduced = document.getElementById('writeWords').value;
     savedWords.innerHTML += ' ' + wordIntroduced + '<br>';
-    document.getElementById('writeWords').innerHTML = '';
+    savedWordsString.push(' ' + wordIntroduced);
+
 }
 
 function searchWord() {
     let wordSearched = document.getElementById('writeWords').value;
-    if (savedWords.textContent.includes(' ' + wordSearched + ' ')) {
-        alert('The word is included in dictionary');
-    } else {
+    let includedWord = false;
+    for (let i = 0; i < savedWordsString.length; i++) {
+        if (savedWordsString[i].includes(' ' + wordSearched + ' ')) {
+            alert('The word is included in dictionary');
+            i = savedWordsString.length;
+            includedWord = true;
+        }
+    }
+    if (includedWord === false) {
         alert('The word is not included in dictionary');
     }
-    document.getElementById('writeWords').innerHTML = '';
 }
